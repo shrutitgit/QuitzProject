@@ -38,7 +38,7 @@ public class QuitzQuestions {
 			DatabaseConnection dc = new DatabaseConnection();
 			con = dc.getConnection();
 			PreparedStatement ps = con.prepareStatement("Select sr,question,option1 as a,option2 as b,"
-					+ "option3 as c, option4 as d from Questions order by rand() limit 5");
+					+ "option3 as c, option4 as d from Questions order by rand() limit 10");
 			ResultSet rs = ps.executeQuery();	
 			
 			while(rs.next()) {
@@ -71,6 +71,7 @@ public class QuitzQuestions {
 	
 	int marks;
 	HashMap<Object,String> map1 = new HashMap<Object,String>();
+	
 	public void getMarks() {
 		
 		try {
@@ -87,22 +88,20 @@ public class QuitzQuestions {
 			Set<Object> keySet = map.keySet();
 			Iterator<Object> itr = keySet.iterator();
 			while(itr.hasNext()) {	
-				Object next2 = itr.next();
-				System.out.println(next2);
-//				Set<Object> keySet2 = map1.keySet();
-//				Iterator<Object> itr1 = keySet2.iterator();
-//				while(itr1.hasNext()) {
-//					Object next = itr1.next();
-//					if(next==next2) {
-//						marks++;
-//					}
-//				}
-//				boolean equals = map1.equals(itr.next());
-//				
-//				System.out.println("Returns: "+equals);
-//				if(map1.entrySet().containsAll(itr.next())){
-//						marks++;
-//					}
+				Object value = itr.next();
+				String key = map.get(value);
+				
+				Set<Object> keySet2 = map1.keySet();
+				Iterator<Object> itr1 = keySet2.iterator();
+				while(itr1.hasNext()) {
+					Object value1 = itr1.next();
+					String key1 = map1.get(value1);
+					
+					if(key.equals(key1)) {
+						if(value.equals(value1))
+						marks++;
+					}
+				}
 				
 			}
 			System.out.println("Total Score out of 10 is "+marks);

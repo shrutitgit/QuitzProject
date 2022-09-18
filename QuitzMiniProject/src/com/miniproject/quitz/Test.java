@@ -5,7 +5,6 @@ public class Test {
 	public static void main(String[] args) {
 		
 		QuitzQuestions qQuestions = new QuitzQuestions();
-	//	StudentMarks marks = new StudentMarks();
 
 		try {
 			qQuestions.getQuestions();
