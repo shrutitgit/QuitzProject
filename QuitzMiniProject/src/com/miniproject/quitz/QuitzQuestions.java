@@ -16,19 +16,6 @@ public class QuitzQuestions {
 	int qresult[];
 	String choice;
 	Scanner sc = new Scanner(System.in);
-
-//	public int getChoice() {
-//		int n=1;
-//		String s = choice.toLowerCase();
-//		for(int i=0;i<s.length();i++) {
-//			if(s.charAt(0)>'a' && s.charAt(i)<'d') {
-//				System.err.println("Incorrect choice");
-//				System.out.println("Kindly re-enter correct choice");
-//				n=0;
-//			}
-//		}
-//		return n;
-//	}
 	
 	HashMap<Object,String> map = new HashMap<Object,String>();
 	
@@ -51,6 +38,16 @@ public class QuitzQuestions {
 				System.out.println("Enter your choice: ");
 				choice = sc.nextLine();
 				
+				String s = choice.toLowerCase();
+				char s1=s.charAt(0);
+					if(s1>='a' && s1<='d') {
+						
+					} else {
+						System.err.println("Incorrect choice");
+						System.out.println("\nKindly re-enter correct choice");
+						choice=sc.nextLine();
+					}
+					
 				map.put(rs.getObject(1),choice.toLowerCase());
 				num++;
 			}
@@ -84,7 +81,6 @@ public class QuitzQuestions {
 				map1.put(rs.getObject(1), rs.getString(2));
 			System.out.println(map1);			
 	
-
 			Set<Object> keySet = map.keySet();
 			Iterator<Object> itr = keySet.iterator();
 			while(itr.hasNext()) {	

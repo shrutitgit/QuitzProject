@@ -9,7 +9,6 @@ public class Test {
 		try {
 			qQuestions.getQuestions();
 			qQuestions.getMarks();	
-			System.out.println("Test method");
 			
 		}catch (Exception e) {
 			e.printStackTrace();
