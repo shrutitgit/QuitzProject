@@ -34,9 +34,10 @@ public class UserDetail {
 		Scanner sc = new Scanner(System.in);
 		UserDetail u = new UserDetail();
 		try {
-			System.out.println("*****-------******----------******");
-			System.out.println("---- Welcome To Registration Form: -----");
-			System.out.println("*****-------******----------******\n");
+			System.out.println();
+			System.out.println("----------******-------******-------******----------");
+			System.out.println("---------   Welcome To Registration Form   ---------");
+			System.out.println("----------******-------******-------******----------\n");
 			System.out.println("Enter your First Name:");
 			String firstName = sc.next();
 			System.out.println("Enter your Last Name:");
@@ -48,7 +49,7 @@ public class UserDetail {
 
 			userData(firstName, lastName, userName, passKey);
 
-			System.out.println("User Detail Inserted Successfully....!");
+			System.out.println("Registered Successfully....\n You can Login Now");
 			System.out.println();
 			Test.userMenu();
 

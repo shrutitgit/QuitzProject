@@ -14,14 +14,16 @@ public class UserLogin {
 		Scanner sc = new Scanner(System.in);
 		String dbUserName = "";
 		String dbPass = "";
-		System.out.println("\n");
-//		System.out.println("-------***-WELCOME FOR LOGIN-***-------");
-		System.out.println("-------------------------------------");
+		System.out.println("----------------------------------------------------");
+		System.out.println("--------*****-    WELCOME FOR LOGIN    -*****-------");
+		System.out.println("----------------------------------------------------");
+		System.out.println();
 		System.out.println("Enter Your User Name :");
 		String name = sc.next();
 		
-		System.out.println("Enter your Password :");
+		System.out.println("Enter Your Password :");
 		String password = sc.next();
+		
 		DatabaseConnection dbcon = new DatabaseConnection();
 		Connection con1=dbcon.getConnection();
 		Statement stmt = con1.createStatement();
@@ -35,10 +37,12 @@ public class UserLogin {
 		}
 		
 		if (name.equals(dbUserName) && password.equals(dbPass)) {
-	        System.out.println("Successful Login!\n----");
+	        System.out.println("Successfully Login...!\n");
 	        Test.innerMenu();
+	        
 	    } else {
-	        System.out.println("Incorrect Password\n----");
+	        System.out.println("Incorrect Password...Please try again\n----");
+	        
 	    }
 		
 		

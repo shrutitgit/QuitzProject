@@ -9,7 +9,11 @@ public class Test {
 		try {
 
 			while (menuChoice != 5) {
-				System.out.println("Enter :" + " " + "1.Register" + "" + " 2.Login" + " 3.ScoreCard>>" + " 5.Exit");
+				System.out.println("====================================================");
+				System.out.println("                      MAIN MENU                     ");
+				System.out.println("====================================================");
+				System.out.println("(1) Register\n" + "" + "(2) Login\n" + "(3) ScoreCard\n" + "(5) Exit");
+				System.out.print("Enter Your choice: ");
 				Scanner sc = new Scanner(System.in);
 
 				menuChoice = sc.nextInt();
@@ -23,7 +27,7 @@ public class Test {
 					UserLogin.checkUser();
 					break;
 				case 3:
-					
+
 					System.out.println("ScoreCard");
 					break;
 				case 5:
@@ -34,24 +38,26 @@ public class Test {
 					System.out.println("Invalid Selection....");
 					break;
 				}
-			};
+			}
+			;
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	
 	public static void innerMenu() {
 		int menuChoice = 0;
 
 		try {
 
 			while (menuChoice != 5) {
-				System.out.println("Enter :" + " " + "1.Start Test" + " " + " 2.View Result " + " 3.MainMenu "+" 5.Exit ");
+				
+				System.out.println("(1) Start Test\n" + "(2) View Result \n" + "(3) MainMenu \n" + "(5) Exit ");
+				System.out.println("Enter Your Choice :");
 				Scanner sc = new Scanner(System.in);
-
 				menuChoice = sc.nextInt();
+				
 				switch (menuChoice) {
 				case 1:
 					QuitzQuestions qQuestions = new QuitzQuestions();
@@ -59,35 +65,33 @@ public class Test {
 					break;
 				case 2:
 					QuitzQuestions qQuestion = new QuitzQuestions();
-					qQuestion.getMarks();	
+					qQuestion.getMarks(); //Marks score card
 					break;
 				case 3:
-					userMenu();
-					System.out.println("Main Menu");
+					userMenu(); //MainMenu
 					break;
 				case 5:
+					System.out.println("      * * * * * THANK YOU * * * * *     ");
 					System.exit(0);
 					break;
 				default:
-					System.out.println("Invalid Selection....");
+					System.out.println("Invalid Selection....\n");
 					break;
 				}
 			};
-		}catch(Exception e) {
 			
+		} catch (Exception e) {
+
 		}
 	}
+
 	public static void main(String[] args) {
-		
-//		UserLogin login = new UserLogin();
-//		UserDetail u = new UserDetail();
-	System.out.println("-------***-WELCOME To QUIZ Appplication-***-------");
-		System.out.println("---------------------------------------------------");
+		System.out.println("**************************************************");
+		System.out.println("-----***   WELCOME To QUIZ Appplication   ***-----");
+		System.out.println("**************************************************");
 
 		userMenu();
 
-		
-		
 	}
 
 }
